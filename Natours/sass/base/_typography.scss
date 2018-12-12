@@ -1,0 +1,52 @@
+$color-primary:#7ed56f;
+$color-primary-light:#55c57a;
+$color-primary-dark:#28b485;
+$color-grey-dark:#777;  
+$color-white:#fff;
+$color-black:#000;
+/* backface visibility determines if the user can see the element with the animation were using it to fix the shaky animation */
+body{
+    font-family: "Lato",sans-serif;
+    font-weight: 400;
+    /* font-size:16px; */
+    line-height: 1.7;
+    color:$color-grey-dark;
+    padding:3rem;
+}
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+    
+    /* animation name calls the keyframe */
+    /* ease-out starts fast then ends quick */
+    &--main{
+        display:block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        margin-right: -3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        /* animation-iteration-count: 3; */
+        /* animation-delay: 3s; */
+        }
+        
+     &--sub{
+        display:block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75 rem;
+        margin-right: -1.74rem;
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-timing-function:ease-out
+        }
+    
+    }
+    
+    /* translate x means where x is going. Positive value goes to the right while negative goes to the left */
+    /* we end it at 0 because thats where it originally is */
+    

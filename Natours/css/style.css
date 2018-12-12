@@ -1,0 +1,214 @@
+/* the after and before pseudo elements dont have the reset so this adds them into it  */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* backface visibility determines if the user can see the element with the animation were using it to fix the shaky animation */
+body {
+  font-family: "Lato",sans-serif;
+  font-weight: 400;
+  /* font-size:16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+  /* animation name calls the keyframe */
+  /* ease-out starts fast then ends quick */ }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    margin-right: -3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-iteration-count: 3; */
+    /* animation-delay: 3s; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75 rem;
+    margin-right: -1.74rem;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+
+/* translate x means where x is going. Positive value goes to the right while negative goes to the left */
+/* we end it at 0 because thats where it originally is */
+.btn {
+  /* transform property is used to make the effects */
+  /* box-shadow starts with x then goes to y. were not using x so its a 0 next is y and after is a blurry effect */
+  /* rgba in box shadow. first 3 are colors last is opacity */
+  /* active is when we click it */
+  /* the after pseudo element is basically a child of the button so that is why we can say height is 100% because that is 100% of the button   */
+  /* fill mode makes the styles of 0% before the animation starts  */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /* after pseudo element only happening when youre hovering over button */
+    /* scale increases or decreases the size of element so were making it 1.5 times bigger when you hover */
+    /* opacity 0 basically makes something invisible */ }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; }
+  .btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) /2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) /3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) /3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) /4); }
+  .row .col-2-of-4 {
+    width: calc(2*((100% - 3 * 6rem) /4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3* ((100% - 3 * 6rem) /4) + 2 * 6rem); }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* parent is header  */
+  /* translate shifts the element to half of the width of the left side
+ and same for height */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+/* Were converting all pixels to rem. Rem takes the root element and makes it into pixels so in our case 1 rem = 10px; */
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+/* vh = viewheight. Cover helps fit the element into box */
+/* linear gradient makes a background color change from a light color to a darker color. We can also have an image below but well make it come up. the gradient and you can set which way the gradient goes */
+/* Clip path makes the shapes of the header so for this were using a polygon first is top left then top right then bottom left and then bottom right */
+/* For animations that arent on load  */
+/* .logo:hover{
+    animation: moveInRight 1s ease-out;
+} */
+/* link is pseudo class that is a state of element. Functions as a link. Visited means you have already clicked the link so when you click a blue link and the next time you click it its purple. */
+/* padding goes top right bottom left when 4 there are . were just using 2 so its top bottom */
+/* @media only screen and (max-width: 1200px){
+    html{
+      font-size:56.25%
+    }
+    .header-tag-secondary{
+      letter-spacing: .5rem;
+    }
+  }
+
+@media only screen and (max-width: 900px){
+    html{
+      font-size:50%
+    }
+    .header-tag-secondary{
+      font-size: 2rem;
+      letter-spacing: .5rem;
+    }
+  }
+   
+  @media only screen and (max-width: 600px){
+    .header-tag-secondary{
+      font-size: 1.7rem;
+    }
+  } */

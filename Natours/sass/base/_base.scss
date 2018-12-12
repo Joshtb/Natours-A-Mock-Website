@@ -1,0 +1,18 @@
+*, 
+*::after,
+*::before{
+margin:0;
+padding:0;
+box-sizing: inherit;
+}
+
+/* Were converting all pixels to rem. Rem takes the root element and makes it into pixels so in our case 1 rem = 10px; */
+html{
+    // defines what one rem is
+    font-size: 62.5%;
+}
+
+body {
+    
+    box-sizing:border-box;
+}
