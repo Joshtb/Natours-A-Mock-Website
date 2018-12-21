@@ -1,0 +1,45 @@
+// we use percentages for responsive design
+.composition {
+  position: relative;
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2px;
+    //position absolute for the overlap look
+    position: absolute;
+    //zindex on all photos
+    z-index: 10;
+    transition: all;
+    outline-offset: 2rem;
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+    //starts at the right and moves
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+    //20%from the left
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+    //implementing hover
+    &:hover {
+      //outline of img
+      outline: 1.5rem solid $color-primary;
+
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      //when you hover this img displays on top
+      z-index: 20;
+    }
+  }
+  //composition:hover composition__photo:not(:hover)
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}

@@ -2,7 +2,7 @@
 //"not" pesudo class means every thing BUT whats in the paranthesis
 .row {
     max-width:$grid-width;
-    background-color: #eee;
+    // background-color: #eee;
     margin:0 auto;
   
 
@@ -13,7 +13,7 @@
     @include clearfix;
 // all the attributes that start with col. the ^ is the way it only selects the attributes that starts with col
     [class^="col-"]{
-        background-color: orangered;
+        
         float:left;
         &:not(:last-child){
             margin-right: $gutter-horizontal;

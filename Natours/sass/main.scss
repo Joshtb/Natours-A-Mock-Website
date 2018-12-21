@@ -1,46 +1,39 @@
 // ##### To start the sass compiler, be in the starter folder and run : npm run compile:sass. It wont look like its doing anything until you save changes
 // After, use another terminal and run: live server
-  // in the pckage.json on the scripts: this compiles the code when you run it in the terminal. you first call the dependency which is the npm package, then the input which is the sass file then the out put which is the style.css file.//
+// in the pckage.json on the scripts: this compiles the code when you run it in the terminal. you first call the dependency which is the npm package, then the input which is the sass file then the out put which is the style.css file.//
 
 /* the after and before pseudo elements dont have the reset so this adds them into it  */
- 
-// importing the base file 
 
+// importing the base file
+@import "abstracts/variables";
 @import "base/animations";
 @import "base/typography";
 @import "base/utilities";
 
 @import "abstracts/mixins";
-@import "abstracts/variables";
 @import "abstracts/functions";
 
 @import "pages/home";
 
 @import "components/button";
+@import "./components/composition";
 
 @import "layout/grid";
 @import "layout/header";
- 
+
 @import "base/base";
 
 /* vh = viewheight. Cover helps fit the element into box */
 /* linear gradient makes a background color change from a light color to a darker color. We can also have an image below but well make it come up. the gradient and you can set which way the gradient goes */
 /* Clip path makes the shapes of the header so for this were using a polygon first is top left then top right then bottom left and then bottom right */
 
-
-
 /* For animations that arent on load  */
 /* .logo:hover{
     animation: moveInRight 1s ease-out;
 } */
 
-
-
-
-
 /* link is pseudo class that is a state of element. Functions as a link. Visited means you have already clicked the link so when you click a blue link and the next time you click it its purple. */
 /* padding goes top right bottom left when 4 there are . were just using 2 so its top bottom */
-
 
 /* @media only screen and (max-width: 1200px){
     html{
