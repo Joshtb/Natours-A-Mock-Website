@@ -3,7 +3,7 @@
 // in the pckage.json on the scripts: this compiles the code when you run it in the terminal. you first call the dependency which is the npm package, then the input which is the sass file then the out put which is the style.css file.//
 
 /* the after and before pseudo elements dont have the reset so this adds them into it  */
-
+ 
 // importing the base file
 @import "abstracts/variables";
 @import "base/animations";
