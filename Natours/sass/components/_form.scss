@@ -5,7 +5,6 @@
 
   &__input {
     font-size: 1.5rem;
-    // automatically inherits the font family
     font-family: inherit;
     color: inherit;
     padding: 1.5rem 2rem;
@@ -15,13 +14,14 @@
     border-bottom: 3px solid transparent;
     width: 90%;
     display: block;
+    transition: all 0.3s;
 
     &:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
       border-bottom: 3px solid $color-primary;
     }
-    // if the name or email isnt valid the border will turn orangered
+
     &:focus:invalid {
       border-bottom: 3px solid $color-secondary-dark;
     }
@@ -39,8 +39,7 @@
     display: block;
     transition: all 0.3s;
   }
-  // the "+" is an adjacent sibling so the element that comes next after the first selected element
-  // "~" is for general siblings
+
   &__input:placeholder-shown + &__label {
     opacity: 0;
     visibility: hidden;
@@ -77,7 +76,7 @@
       content: "";
       display: block;
       height: 1.3rem;
-      width: 1rem;
+      width: 1.3rem;
       border-radius: 50%;
       position: absolute;
       top: 50%;
@@ -88,7 +87,7 @@
       transition: opacity 0.2s;
     }
   }
-  // when we select the radio input it is checked
+
   &__radio-input:checked ~ &__radio-label &__radio-button::after {
     opacity: 1;
   }
