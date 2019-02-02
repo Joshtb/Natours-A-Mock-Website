@@ -14,6 +14,20 @@
 </head>
 
 <body>
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="navigation__button"><span class="navigation__icon">&nbsp;</span></label>
+        <div class="navigation__background">&nbsp;</div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span> Natours</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span> Your Benefits</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span> Popular Tours</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span> Stories</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span> Book Now</a></li>
+            </ul>
+        </nav>
+    </div>
     <header class="header">
         <div class="header__logo-box">
             <img src="./img/logo-white.png" alt="Natours logo-white" class="header__logo">
@@ -23,7 +37,7 @@
                 <span class="heading-primary--main">Outdoors</span>
                 <span class="heading-primary--sub">is where life happens</span>
             </h1>
-            <a href="" class="btn btn--white btn--animated">Discover our tours</a>
+            <a href="#section-tours" class="btn btn--white btn--animated">Discover our tours</a>
         </div>
 
     </header>
@@ -100,7 +114,7 @@
 
             </div>
         </section>
-        <section class="section-tours">
+        <section class="section-tours"id="section-tours">
             <div class="u-center-text u-margin-bottom-big">
                 <h2 class="heading-secondary">
                   Most popular tours
@@ -136,7 +150,7 @@
                                 <p class="card__price-only">Only</p>
                                 <p class="card__price-value">$297</p>
                             </div>
-                            <a href="#" class="btn btn--white">Book Now</a>
+                            <a href="#popup" class="btn btn--white">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -169,7 +183,7 @@
                                     <p class="card__price-only">Only</p>
                                     <p class="card__price-value">$497</p>
                                 </div>
-                                <a href="#" class="btn btn--white">Book Now</a>
+                                <a href="#popup" class="btn btn--white">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -203,7 +217,7 @@
                                     <p class="card__price-only">Only</p>
                                     <p class="card__price-value">$897</p>
                                 </div>
-                                <a href="#" class="btn btn--white">Book Now</a>
+                                <a href="#popup" class="btn btn--white">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -343,6 +357,24 @@
             </div>
         </div>
     </footer>
+
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <img src="img/nat-8.jpg" alt="Tour Photo" class="popup__img">
+                <img src="img/nat-9.jpg" alt="Tour Photo" class="popup__img">
+            </div>
+            <div class="popup__right">
+                <a href="#section-tours" class="popup__close">&times;</a>               
+                <h2 class="heading-secondary u-margin-bottom-small">Start Booking Now</h2>
+                <h3 class="heading-tertiary u-margin-bottom-small"> Important &ndash; Please read Terms before booking</h3>
+            <p class="popup__text">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            </p>
+            <a href="#" class="btn btn--green"> Book Now</a>
+            </div>
+        </div>
+    </div>
 
 
 
